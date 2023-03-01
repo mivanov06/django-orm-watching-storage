@@ -39,11 +39,9 @@ class Visit(models.Model):
         return duration
 
     def format_duration(self):
-        seconds = int(self.get_duration().total_seconds())
+        seconds = self.get_duration().total_seconds()
         hours, minutes = int(seconds // 3600), int(seconds % 3600 // 60)
-        second = int(seconds - hours * 60 * 60 - minutes * 60)
-        second_str = lambda second: '' if 0 else f' {second} сек.'
-        return f'{hours} час. {minutes} мин.{second_str(second)}'
+        return f'{hours} час. {minutes} мин.'
 
     def is_long(self, minutes=60):
-        return self.get_duration().total_seconds() // (minutes * 60) > 1
+        return self.get_duration().total_seconds() // (minutes * 60) >= 1

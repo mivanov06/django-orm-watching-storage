@@ -13,20 +13,11 @@ pip -m venv venv
 ```
 pip install -r requirements.txt
 ```
-3. В settings.py прописать данные для подключения к базе данных:
+3. Файл `.env.example` переименовать в `.env`. 
 
-```
-DATABASES = {
-...
-    HOST=host
-    DB_PORT=port
-    NAME=name
-    USER=user
-    PASSWORD=password
-...    
-SECRET_KEY=key
-...
-```
+Изменить в `.env` значения параметров для подключения к базе данных `HOST`, `PORT`,
+`NAME`, `USER`, `PASSWORD`. `SECRET_KEY`, `DEBUG`
+
 ## Использование
 Для запуска сервера выполнить
 

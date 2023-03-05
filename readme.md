@@ -18,8 +18,19 @@ pip install -r requirements.txt
 ```
 3. Файл `.env.example` переименовать в `.env`. 
 
-Изменить в `.env` значения параметров для подключения к базе данных `HOST`, `PORT`,
-`NAME`, `USER`, `PASSWORD`. `SECRET_KEY`, `DEBUG`
+Для начала работы достаточно указать параметры подключения к базе данных в файле `.env` в виде стоки
+
+```
+DB_URL='postgres://USER:PASSWORD@HOST:PORT/NAME'
+```
+Так же можно указать настройки для разрешенных адресов ALLOWED_HOSTS, случайную большую строку SECRET_KEY, управление
+режимом отладки DEBUG
+
+```
+SECRET_KEY='6&e1!10xwy=du08q#jung@ariz+&q1p$=m3y4+glqzt-w9%76h'
+ALLOWED_HOSTS=[]
+DEBUG=FALSE
+```
 
 ## Использование
 Для запуска сервера выполнить
